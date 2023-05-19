@@ -1,0 +1,93 @@
+<Page x:Class="UI_Hack.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Page1">
+    <Grid>
+        <Image Source="Logo.png" Width="200" Height="200" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,0,0" />
+        <Button Content="Back to Main Menu" Width="150" Height="30" Click="BackToMainMenu_Click"
+                Background="#E7504A"
+                Foreground="White"
+                FontWeight="Bold"
+                BorderBrush="#E7504A"
+                BorderThickness="1"
+                Margin="10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="20">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Enter the Name of the File:" Margin="0 0 0 10" Foreground="White"
+                       FontSize="30" FontFamily="Arial" />
+            <TextBox x:Name="FilePathTextBox" Width="300" Height="24" Margin="0 0 0 10"
+                     Background="#424549" />
+            <Button Content="Calculate" Height="30" Width="85" Click="CalculateButton_Click"
+                    Background="#7289DA"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderBrush="#7289DA"
+                    BorderThickness="1"
+                    Margin="0 10 0 0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="20">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <TextBlock Text="Result: " Margin="10 50 10 0" HorizontalAlignment="Center" Foreground="White"
+                       FontSize="22" FontFamily="Arial" />
+            <TextBlock x:Name="ResultTextBlock" Margin="0 10 0 0" Background="White"
+                       FontWeight="Bold" FontSize="20" TextAlignment="Center">
+            </TextBlock>
+            <Border Background="#36393e" Width="300" Height="125" CornerRadius="10" Margin="10" VerticalAlignment="Bottom">
+                <TextBlock Text="This application takes in an input text file and compares it with our existing dataset for certain trigger words or phrases that are commonly used by scammers and phishing emails and determines the percentage of how likely it is spam." 
+                   Foreground="White" 
+                   FontStyle="Italic" 
+                   Padding="10"
+                   TextWrapping="Wrap"
+                   TextTrimming="CharacterEllipsis"
+                   
+                   LineHeight="20"
+                   LineStackingStrategy="BlockLineHeight" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
